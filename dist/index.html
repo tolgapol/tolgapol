@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tolga Polat — Digital Marketing Leader & Builder</title>
+  <meta name="description" content="Tolga Polat — Head of Digital Marketing. Building growth systems, automation pipelines, and data-driven strategies from Istanbul.">
+  <meta property="og:title" content="Tolga Polat">
+  <meta property="og:description" content="Digital Marketing Leader & Builder from Istanbul">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tolgapol.com">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://tolgapol.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+    :root {
+      --bg: #0a0a0f;
+      --bg-card: rgba(255,255,255,0.03);
+      --text: #e8e8ed;
+      --text-dim: #6b6b80;
+      --accent: #6366f1;
+      --accent-2: #a855f7;
+      --accent-3: #ec4899;
+      --border: rgba(255,255,255,0.06);
+      --glow: rgba(99,102,241,0.15);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ---- Animated gradient mesh background ---- */
+    .bg-mesh {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bg-mesh::before,
+    .bg-mesh::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.4;
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .bg-mesh::before {
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+      top: -200px;
+      right: -100px;
+      animation-delay: 0s;
+    }
+
+    .bg-mesh::after {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--accent-2) 0%, transparent 70%);
+      bottom: -150px;
+      left: -100px;
+      animation-delay: -10s;
+    }
+
+    .bg-orb {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--accent-3) 0%, transparent 70%);
+      filter: blur(120px);
+      opacity: 0.25;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: float 25s ease-in-out infinite;
+      animation-delay: -5s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      25% { transform: translate(60px, -40px) scale(1.1); }
+      50% { transform: translate(-30px, 60px) scale(0.95); }
+      75% { transform: translate(40px, 30px) scale(1.05); }
+    }
+
+    /* ---- Noise overlay ---- */
+    .noise {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    /* ---- Grid lines ---- */
+    .grid-lines {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(ellipse 60% 60% at 50% 50%, black 20%, transparent 70%);
+    }
+
+    /* ---- Main content ---- */
+    .wrapper {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ---- Hero ---- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-block: 80px;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(99,102,241,0.4); }
+      50% { opacity: 0.7; box-shadow: 0 0 0 8px rgba(99,102,241,0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .hero h1 .gradient-text {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2), var(--accent-3));
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 8s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero .subtitle {
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      color: var(--text-dim);
+      font-weight: 400;
+      max-width: 540px;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    .hero .subtitle strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- Sections ---- */
+    section {
+      padding-block: 60px;
+    }
+
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ---- About ---- */
+    .about p {
+      font-size: 1.05rem;
+      color: var(--text-dim);
+      line-height: 1.8;
+      max-width: 600px;
+    }
+
+    .about p + p {
+      margin-top: 16px;
+    }
+
+    .about strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* ---- Skills tags ---- */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 32px;
+    }
+
+    .tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--glow);
+      transform: translateY(-1px);
+    }
+
+    /* ---- Experience timeline ---- */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 24px;
+      border-radius: 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-item:hover {
+      border-color: rgba(99,102,241,0.2);
+      box-shadow: 0 0 40px var(--glow);
+      transform: translateY(-2px);
+    }
+
+    .timeline-item .role {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .timeline-item .company {
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .timeline-item .period {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--text-dim);
+      margin-top: 8px;
+    }
+
+    .timeline-item .desc {
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* ---- Links / Connect ---- */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+
+    .link-card:hover {
+      border-color: rgba(99,102,241,0.3);
+      box-shadow: 0 0 30px var(--glow);
+      transform: translateY(-2px);
+    }
+
+    .link-card svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+      color: var(--text-dim);
+      transition: color 0.3s ease;
+    }
+
+    .link-card:hover svg {
+      color: var(--accent);
+    }
+
+    .link-card .link-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .link-card .link-url {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      padding-block: 48px;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    footer p {
+      font-size: 13px;
+      color: var(--text-dim);
+      text-align: center;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ---- Scroll reveal ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 480px) {
+      .wrapper { padding: 0 16px; }
+      .hero { padding-block: 60px; }
+      section { padding-block: 40px; }
+      .links-grid { grid-template-columns: 1fr; }
+      .timeline-item { padding: 18px; }
+    }
+
+    /* ---- Reduced motion ---- */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* ---- Selection ---- */
+    ::selection {
+      background: rgba(99,102,241,0.3);
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background effects -->
+  <div class="bg-mesh"><div class="bg-orb"></div></div>
+  <div class="noise"></div>
+  <div class="grid-lines"></div>
+
+  <div class="wrapper">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="status">
+        <span class="status-dot"></span>
+        Open to opportunities
+      </div>
+      <h1>
+        <span class="gradient-text">Tolga Polat</span>
+      </h1>
+      <p class="subtitle">
+        <strong>Head of Digital Marketing</strong> at incehesap.com.
+        Building growth systems, automation pipelines, and data-driven strategies from Istanbul.
+      </p>
+    </header>
+
+    <!-- About -->
+    <section class="about reveal">
+      <div class="section-label">About</div>
+      <p>
+        Digital marketing leader with <strong>8+ years</strong> in e-commerce, performance marketing, and growth strategy.
+        Managing a <strong>12-person team</strong> across SEM, SEO, CRM, influencer, and content channels.
+      </p>
+      <p>
+        I build systems that scale &mdash; forecasting engines, automated reporting pipelines, and
+        marketing infrastructure that ties every decision back to <strong>measurable revenue impact</strong>.
+      </p>
+      <div class="tags">
+        <span class="tag">Google Ads</span>
+        <span class="tag">Meta Ads</span>
+        <span class="tag">GA4</span>
+        <span class="tag">SEO</span>
+        <span class="tag">CRO</span>
+        <span class="tag">Looker Studio</span>
+        <span class="tag">N8N</span>
+        <span class="tag">Data Analytics</span>
+        <span class="tag">Growth Strategy</span>
+        <span class="tag">Team Leadership</span>
+        <span class="tag">E-commerce</span>
+        <span class="tag">Automation</span>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="reveal">
+      <div class="section-label">Experience</div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="role">Head of Digital Marketing</div>
+          <div class="company">incehesap.com</div>
+          <div class="period">Jan 2023 — Present</div>
+          <p class="desc">
+            Leading digital marketing strategy across all channels. Nearly doubled ROAS through campaign optimization.
+            Led go-to-market for native mobile app launch. Managing multi-million TRY annual budget.
+          </p>
+        </article>
+        <article class="timeline-item">
+          <div class="role">Content Manager</div>
+          <div class="company">incehesap.com</div>
+          <div class="period">Apr 2020 — Dec 2022</div>
+          <p class="desc">
+            Managed content team of 4. Built SEO-driven content strategy that drove significant
+            organic traffic growth and session engagement.
+          </p>
+        </article>
+        <article class="timeline-item">
+          <div class="role">Digital Marketing Specialist</div>
+          <div class="company">Joker.com.tr</div>
+          <div class="period">2018 — 2019</div>
+          <p class="desc">
+            Managed performance marketing, SEO, and email campaigns. Developed omnichannel strategy across 100+ retail stores.
+            Achieved 75% organic traffic increase via content.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="reveal">
+      <div class="section-label">Side Projects</div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="role">Browser Toolkit</div>
+          <div class="company">Privacy-first browser tools</div>
+          <p class="desc">Open-source collection of privacy-first browser utilities built with Astro and React.</p>
+        </article>
+        <article class="timeline-item">
+          <div class="role">SurvivalTrader</div>
+          <div class="company">Algorithmic trading bot</div>
+          <p class="desc">Automated Binance Futures trading system with N8N workflows and custom risk management.</p>
+        </article>
+        <article class="timeline-item">
+          <div class="role">Mythographia</div>
+          <div class="company">Content platform</div>
+          <p class="desc">Greek mythology content platform built with Astro, focused on SEO and engaging storytelling.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Connect -->
+    <section class="reveal">
+      <div class="section-label">Connect</div>
+      <nav class="links-grid" aria-label="Social links">
+        <a class="link-card" href="https://linkedin.com/in/tolgapol" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <div>
+            <div class="link-label">LinkedIn</div>
+            <div class="link-url">/in/tolgapol</div>
+          </div>
+        </a>
+        <a class="link-card" href="https://github.com/tolgapol" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+          <div>
+            <div class="link-label">GitHub</div>
+            <div class="link-url">@tolgapol</div>
+          </div>
+        </a>
+        <a class="link-card" href="mailto:tlqplt@gmail.com">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <div>
+            <div class="link-label">Email</div>
+            <div class="link-url">tlqplt@gmail.com</div>
+          </div>
+        </a>
+        <a class="link-card" href="https://tolgapol.com" aria-current="page">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          <div>
+            <div class="link-label">Website</div>
+            <div class="link-url">tolgapol.com</div>
+          </div>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Tolga Polat &middot; Istanbul, Turkey</p>
+    </footer>
+  </div>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Cursor glow effect
+    const wrapper = document.querySelector('.wrapper');
+    let glowEl = null;
+
+    document.addEventListener('mousemove', (e) => {
+      if (!glowEl) {
+        glowEl = document.createElement('div');
+        glowEl.style.cssText = `
+          position: fixed;
+          width: 300px;
+          height: 300px;
+          border-radius: 50%;
+          background: radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%);
+          pointer-events: none;
+          z-index: 1;
+          transition: transform 0.15s ease;
+        `;
+        document.body.appendChild(glowEl);
+      }
+      glowEl.style.transform = `translate(${e.clientX - 150}px, ${e.clientY - 150}px)`;
+    });
+  </script>
+</body>
+</html>

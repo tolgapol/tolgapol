@@ -1,0 +1,13 @@
+{
+  "name": "tolgapol",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website for Tolga Polat",
+  "scripts": {
+    "dev": "wrangler pages dev dist",
+    "deploy": "wrangler pages deploy dist --project-name=tolgapol"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
