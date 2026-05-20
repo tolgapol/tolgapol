@@ -41,7 +41,7 @@ body {
   background: var(--bg);
   color: var(--text);
   height: 100dvh;
-  min-height: 580px;
+  min-height: 560px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ body {
 /* ── Topbar ─────────────────────────────────────── */
 .topbar {
   position: relative; z-index: 10; flex-shrink: 0;
-  width: 100%; max-width: 540px;
+  width: 100%; max-width: 608px;
   padding: 16px 24px 0;
   display: flex; justify-content: flex-end; align-items: center; gap: 8px;
 }
@@ -81,10 +81,12 @@ body {
   color: var(--text-mid);
   font-family: var(--font-mono);
   font-size: 11px;
-  padding: 5px 24px 5px 10px;
+  height: 32px;
+  padding: 0 28px 0 10px;
   cursor: pointer;
   outline: none;
   transition: border-color 0.2s, color 0.2s;
+  touch-action: manipulation;
 }
 .lang-wrap select:hover, .lang-wrap select:focus { border-color: var(--border-s); color: var(--text); }
 .lang-wrap::after {
@@ -105,15 +107,25 @@ body {
 .icon-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .icon { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
 
-/* ── Card (vertically centered) ─────────────────── */
+/* ── Card container ─────────────────────────────── */
 .card {
   position: relative; z-index: 2;
   flex: 1 1 auto; min-height: 0;
-  width: 100%; max-width: 500px;
-  padding: 24px 24px 0;
+  width: 100%; max-width: 560px;
+  padding: 0 24px;
+  display: flex; flex-direction: column;
+  align-items: center;
+}
+
+/* ── Card body — centered content ───────────────── */
+.card-body {
+  flex: 1;
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
   gap: 14px; text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  min-height: 0;
 }
 
 .avatar {
@@ -148,7 +160,7 @@ h1 {
 .bio {
   font-size: clamp(0.80rem, 3.5vw, 0.92rem);
   color: var(--text-dim); line-height: 1.65;
-  max-width: 400px;
+  max-width: 460px;
 }
 
 /* ── Social links 2×2 grid ──────────────────────── */
@@ -172,18 +184,13 @@ h1 {
 .social-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .social-btn .icon { width: 12px; height: 12px; }
 
-/* ── Divider ────────────────────────────────────── */
-.divider { display: none; }
-
-/* ── Bottom: QR + save button ───────────────────── */
-.bottom {
-  position: relative; z-index: 2; flex-shrink: 0;
-  width: 100%; max-width: 500px;
-  padding: 16px 24px max(20px, env(safe-area-inset-bottom));
-  display: flex; flex-direction: column; align-items: center; gap: 14px;
+/* ── QR block — below centered content ──────────── */
+.qr-block {
+  display: none;
+  flex-direction: column; align-items: center; gap: 8px;
+  flex-shrink: 0;
+  padding: 14px 0 max(20px, env(safe-area-inset-bottom));
 }
-
-.qr-block { display: none; flex-direction: column; align-items: center; gap: 8px; }
 .qr-inner {
   width: 130px; height: 130px; padding: 9px;
   border: 1px solid var(--border); border-radius: 12px;
@@ -192,21 +199,8 @@ h1 {
 .qr-inner svg { width: 100%; height: 100%; display: block; }
 .qr-label {
   font-family: var(--font-mono); font-size: 11px;
-  color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--text-mid); text-transform: uppercase; letter-spacing: 0.09em;
 }
-
-.btn-save {
-  width: 100%; max-width: 320px; min-height: 50px;
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  border-radius: 10px; border: none;
-  background: var(--save-bg); color: var(--save-text);
-  font-family: var(--font-body); font-size: 0.93rem; font-weight: 600;
-  text-decoration: none; letter-spacing: -0.01em;
-  transition: opacity 0.2s;
-}
-.btn-save:hover { opacity: 0.85; }
-.btn-save:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.btn-save .icon { width: 15px; height: 15px; }
 
 /* ── Mobile save (fixed) ────────────────────────── */
 .mobile-save {
@@ -218,41 +212,40 @@ h1 {
   background: var(--save-bg); color: var(--save-text);
   font-family: var(--font-body); font-size: 0.98rem; font-weight: 600;
   text-decoration: none; box-shadow: 0 8px 40px rgba(0,0,0,0.55);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.01em; touch-action: manipulation;
 }
 .mobile-save:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mobile-save .icon { width: 15px; height: 15px; }
 
 /* ── Animations ─────────────────────────────────── */
 .fade-up { opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
-.card > *:nth-child(1) { animation-delay: 0.05s; }
-.card > *:nth-child(2) { animation-delay: 0.13s; }
-.card > *:nth-child(3) { animation-delay: 0.20s; }
-.card > *:nth-child(4) { animation-delay: 0.27s; }
-.card > *:nth-child(5) { animation-delay: 0.34s; }
-.card > *:nth-child(6) { animation-delay: 0.41s; }
-.card > *:nth-child(7) { animation-delay: 0.48s; }
+.card-body > *:nth-child(1) { animation-delay: 0.05s; }
+.card-body > *:nth-child(2) { animation-delay: 0.13s; }
+.card-body > *:nth-child(3) { animation-delay: 0.20s; }
+.card-body > *:nth-child(4) { animation-delay: 0.27s; }
+.card-body > *:nth-child(5) { animation-delay: 0.34s; }
+.card-body > *:nth-child(6) { animation-delay: 0.41s; }
+.card-body > *:nth-child(7) { animation-delay: 0.48s; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:1ms !important; transition-duration:1ms !important; } }
 
 /* ── Responsive ─────────────────────────────────── */
 @media (min-width: 640px) {
   .qr-block { display: flex; }
-  .btn-save { display: none; }
   .avatar { width: 100px; height: 100px; }
 }
 @media (max-width: 639px) {
-  .card { padding-bottom: 80px; justify-content: flex-start; padding-top: 20px; }
-  .bottom { display: none; }
+  .card-body { padding-bottom: 80px; }
   .mobile-save { display: flex; }
 }
 @media (max-height: 680px) and (max-width: 639px) {
-  .card { gap: 9px; padding-top: 14px; }
+  .card-body { gap: 9px; padding-top: 10px; }
   .avatar { width: 68px; height: 68px; }
   h1 { font-size: 1.8rem; }
   .bio { display: none; }
 }
 @media (max-height: 800px) and (min-width: 640px) {
-  .card { gap: 10px; }
+  .card-body { gap: 10px; }
   .avatar { width: 80px; height: 80px; }
   .qr-inner { width: 100px; height: 100px; }
 }
