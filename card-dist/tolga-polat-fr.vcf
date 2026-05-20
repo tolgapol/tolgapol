@@ -2,8 +2,8 @@ BEGIN:VCARD
 VERSION:3.0
 N:Polat;Tolga;;;
 FN:Tolga Polat
-TITLE:Head of Digital Marketing
-ROLE:Marketing leader
+TITLE:Directeur du Marketing Digital
+ROLE:Responsable marketing
 ORG:incehesap.com;
 TEL;type=CELL;type=VOICE;type=pref:+905074972087
 EMAIL;type=INTERNET;type=WORK;type=pref:t.polat@incehesap.com
@@ -14,9 +14,10 @@ BDAY:1992-07-28
 item1.ADR;type=WORK;type=pref:;;incehesap.com\nAtabey Caddesi No:9/1;Istanb
  ul;Cekmekoy;34788;Türkiye
 item1.X-ABADR:tr
-NOTE:Head of Digital Marketing at incehesap.com — Türkiye's tech e-comme
- rce marketplace. Builds performance-driven growth across SEO\, paid media\
- , CRM automation\, analytics\, and conversion optimisation.
+NOTE:Directeur du Marketing Digital chez incehesap.com — le marketplace e
+ -commerce tech de Türkiye. Construit une croissance basée sur la perform
+ ance dans le SEO\, les médias payants\, l'automatisation CRM et l'optimis
+ ation de conversion.
 PHOTO;ENCODING=b;TYPE=JPEG:/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAMCAgMCAgMDAwME
  AwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2w
  BDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQU
