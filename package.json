@@ -5,7 +5,9 @@
   "description": "Personal website for Tolga Polat",
   "scripts": {
     "dev": "wrangler pages dev dist",
-    "deploy": "wrangler pages deploy dist --project-name=tolgapol"
+    "dev:card": "wrangler pages dev card-dist",
+    "deploy": "wrangler pages deploy dist --project-name=tolgapol",
+    "deploy:card": "wrangler pages deploy card-dist --project-name=tolgapol-hi"
   },
   "devDependencies": {
     "wrangler": "^4.0.0"
