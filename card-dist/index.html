@@ -42,25 +42,32 @@
         <option value="zh-CN">简 — 简体中文</option>
       </select>
     </div>
-    <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+    <button class="icon-btn" id="theme-toggle" aria-label="Switch to light mode">
       <svg class="icon" id="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
       </svg>
     </button>
   </header>
 
   <main class="card" aria-label="Contact profile">
-    <div class="company-logo fade-up" aria-label="incehesap.com">
-      <img src="assets/incehesap-logo.svg" alt="incehesap.com" width="160" height="28">
-    </div>
     <div class="avatar fade-up">
       <img src="assets/tolga-polat.jpg" alt="" width="88" height="88" fetchpriority="high">
     </div>
     <h1 class="fade-up">Tolga Polat</h1>
-    <div class="meta fade-up">
-      <p class="role" id="profile-title">Head of Digital Marketing</p>
-      <p class="location">Istanbul, Türkiye</p>
+    <p class="role fade-up" id="profile-title">Head of Digital Marketing</p>
+    <div class="company-logo fade-up" aria-label="incehesap.com">
+      <img src="assets/incehesap-logo.svg" alt="incehesap.com" width="148" height="26">
     </div>
+    <p class="location fade-up">Istanbul, Türkiye</p>
+    <p class="bio fade-up" id="profile-summary"></p>
     <nav class="social-links fade-up" id="quick-links" aria-label="Contact links"></nav>
   </main>
 
