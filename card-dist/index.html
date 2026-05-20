@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -11,62 +11,73 @@
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://hi.tolgapol.com/">
   <meta property="og:image" content="https://hi.tolgapol.com/assets/tolga-polat.jpg">
-  <meta name="theme-color" content="#f3f0e7">
+  <meta name="theme-color" content="#09090b">
   <title>Tolga Polat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script>
     (function(){
       var s=localStorage.getItem('tp-theme');
-      var theme=s==='light'||s==='dark'?s:(new Date().getHours()>=7&&new Date().getHours()<19?'light':'dark');
-      document.documentElement.dataset.theme=theme;
-      document.querySelector('meta[name="theme-color"]').content=theme==='light'?'#f3f0e7':'#080807';
+      var t=s==='light'||s==='dark'?s:'dark';
+      document.documentElement.dataset.theme=t;
+      document.querySelector('meta[name="theme-color"]').content=t==='light'?'#fafafa':'#09090b';
     })();
   </script>
 </head>
 <body>
-  <main class="stage enter">
-    <section class="profile-panel" aria-label="Profile">
-      <header class="topline">
-        <span class="status">incehesap.com</span>
-        <div id="controls" class="controls" aria-label="Display controls"></div>
-      </header>
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
 
-      <div class="identity">
-        <div class="portrait" aria-hidden="true">
-          <img src="assets/tolga-polat.jpg" alt="" width="116" height="116" fetchpriority="high">
-        </div>
-        <div class="name-block">
-          <h1>Tolga<br>Polat</h1>
-          <p class="role-line">
-            <span id="profile-title">Head of Digital Marketing</span>
-            <span>incehesap.com</span>
-          </p>
-          <p class="summary" id="profile-summary">Marketing leader building performance-driven growth for Türkiye's largest tech e-commerce marketplace.</p>
-          <div class="metadata">
-            <span>Istanbul, Türkiye</span>
-            <span>Growth · Analytics · Automation</span>
-          </div>
-        </div>
-      </div>
+  <header class="topbar">
+    <div class="lang-wrap">
+      <select id="lang-select" aria-label="Select language">
+        <option value="en">EN — English</option>
+        <option value="tr">TR — Türkçe</option>
+        <option value="es">ES — Español</option>
+        <option value="de">DE — Deutsch</option>
+        <option value="fr">FR — Français</option>
+        <option value="zh-TW">繁 — 繁體中文</option>
+        <option value="zh-CN">简 — 简体中文</option>
+      </select>
+    </div>
+    <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+      <svg class="icon" id="theme-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </header>
 
-      <div class="bottom-row">
-        <nav class="quick-links" id="quick-links" aria-label="Contact links"></nav>
-        <a class="save-button desktop-save" id="desktop-save" href="tolga-polat.vcf" download="tolga-polat.vcf">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
-          <span id="save-label">Save Contact</span>
-        </a>
-      </div>
-    </section>
-
-    <aside class="qr-panel" aria-label="QR code to save contact">
-      <div class="qr-stage">
-        <div class="qr-code" id="qr-code"></div>
-      </div>
-      <p class="qr-caption" id="qr-scan-label">Scan to Save</p>
-    </aside>
+  <main class="card" aria-label="Contact profile">
+    <div class="company-logo fade-up" aria-label="incehesap.com">
+      <img src="assets/incehesap-logo.svg" alt="incehesap.com" width="160" height="28">
+    </div>
+    <div class="avatar fade-up">
+      <img src="assets/tolga-polat.jpg" alt="" width="88" height="88" fetchpriority="high">
+    </div>
+    <h1 class="fade-up">Tolga Polat</h1>
+    <div class="meta fade-up">
+      <p class="role" id="profile-title">Head of Digital Marketing</p>
+      <p class="location">Istanbul, Türkiye</p>
+    </div>
+    <nav class="social-links fade-up" id="quick-links" aria-label="Contact links"></nav>
   </main>
 
-  <a class="mobile-save" id="mobile-save" href="tolga-polat.vcf" download="tolga-polat.vcf" aria-label="Save Contact">
+  <div class="divider" aria-hidden="true"></div>
+
+  <footer class="bottom">
+    <div class="qr-block" id="qr-block">
+      <div class="qr-inner" id="qr-code"></div>
+      <p class="qr-label" id="qr-scan-label">Scan to Save</p>
+    </div>
+    <a class="btn-save" id="desktop-save" href="tolga-polat.vcf" download="tolga-polat.vcf">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+      <span id="save-label">Save Contact</span>
+    </a>
+  </footer>
+
+  <a class="mobile-save" id="mobile-save" href="tolga-polat.vcf" download="tolga-polat.vcf">
     <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
     <span id="mobile-save-label">Save Contact</span>
   </a>

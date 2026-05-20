@@ -1,7 +1,7 @@
 import { PROFILE } from './data.js';
 import { detectLang } from './i18n.js';
 import { detectTheme, applyTheme } from './theme.js';
-import { buildControls, updateContent, renderLinks } from './render.js';
+import { setupControls, renderLinks, updateContent } from './render.js';
 
 const theme = detectTheme();
 applyTheme(theme);
@@ -9,5 +9,5 @@ applyTheme(theme);
 const lang = detectLang();
 
 renderLinks(PROFILE);
-buildControls(lang, theme);
+setupControls(lang, theme);
 updateContent(lang);

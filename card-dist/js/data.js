@@ -34,7 +34,7 @@ const T = {
     vcf: 'tolga-polat.vcf',
   },
   tr: {
-    title: 'Dijital Pazarlama Direktörü',
+    title: 'Dijital Pazarlama Müdürü',
     summary: "Türkiye'nin en büyük teknoloji e-ticaret platformunda SEO, ücretli medya, otomasyon ve analitik alanlarında performansa dayalı büyüme inşa eden pazarlama lideri.",
     save: 'Kişiyi Kaydet',
     scan: 'Tara ve Kaydet',

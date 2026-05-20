@@ -2,19 +2,17 @@ const KEY = 'tp-theme';
 
 export function detectTheme() {
   const saved = localStorage.getItem(KEY);
-  if (saved === 'light' || saved === 'dark') return saved;
-  const hour = new Date().getHours();
-  return (hour >= 7 && hour < 19) ? 'light' : 'dark';
+  return saved === 'light' || saved === 'dark' ? saved : 'dark';
 }
 
 export function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
   const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.setAttribute('content', theme === 'light' ? '#f3f0e7' : '#080807');
+  if (meta) meta.content = theme === 'light' ? '#fafafa' : '#09090b';
 }
 
 export function toggleTheme() {
-  const current = document.documentElement.dataset.theme;
+  const current = document.documentElement.dataset.theme || 'dark';
   const next = current === 'light' ? 'dark' : 'light';
   applyTheme(next);
   localStorage.setItem(KEY, next);

@@ -55,7 +55,7 @@ const LANGS = {
   },
   tr: {
     file: 'tolga-polat-tr.vcf',
-    title: 'Dijital Pazarlama Direktörü',
+    title: 'Dijital Pazarlama Müdürü',
     role: 'Pazarlama lideri',
     country: 'Türkiye',
     note: "incehesap.com'da Dijital Pazarlama Direktörü — Türkiye'nin teknoloji e-ticaret platformu. SEO, ücretli medya, CRM otomasyonu, analitik ve dönüşüm optimizasyonu alanlarında büyüme sistemleri kuruyor.",
