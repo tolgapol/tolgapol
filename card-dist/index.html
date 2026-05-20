@@ -745,8 +745,8 @@
     function init() {
       renderProfile(data);
       renderLinks(data);
-      // QR: no photo (keeps payload compact and avoids expired/blocked CDN URLs)
-      renderQr(buildVCard(data, true), data.site.qrErrorCorrection || "M");
+      // QR: encodes VCF URL — short payload, photo included via static file
+      renderQr(data.site.cardUrl + "tolga-polat.vcf", data.site.qrErrorCorrection || "M");
       // Download: try to embed photo as base64 for reliable offline import
       buildVCardForDownload(data, installVCardDownload);
     }
