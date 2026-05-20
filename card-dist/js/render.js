@@ -60,15 +60,12 @@ export function updateContent(lang) {
   const el = (id) => document.getElementById(id);
   const set = (id, val) => { const e = el(id); if (e) e.textContent = val; };
 
-  set('profile-title',       tr.title);
-  set('profile-summary',     tr.summary);
-  set('save-label',          tr.save);
-  set('mobile-save-label',   tr.save);
-  set('qr-scan-label',       tr.scan);
+  set('profile-title',     tr.title);
+  set('profile-summary',   tr.summary);
+  set('mobile-save-label', tr.save);
+  set('qr-scan-label',     tr.scan);
 
-  const dSave = el('desktop-save');
   const mSave = el('mobile-save');
-  if (dSave) { dSave.href = vcfUrl; dSave.download = tr.vcf; }
   if (mSave) { mSave.href = vcfUrl; mSave.download = tr.vcf; }
 
   renderQr(vcfUrl);

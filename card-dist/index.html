@@ -20,7 +20,14 @@
   <script>
     (function(){
       var s=localStorage.getItem('tp-theme');
-      var t=s==='light'||s==='dark'?s:'dark';
+      var t;
+      if(s==='light'||s==='dark'){t=s;}
+      else{
+        var h=new Date().getHours();
+        var night=h<7||h>=18;
+        var dark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+        t=(night||dark)?'dark':'light';
+      }
       document.documentElement.dataset.theme=t;
       document.querySelector('meta[name="theme-color"]').content=t==='light'?'#fafafa':'#09090b';
     })();
@@ -71,17 +78,11 @@
     <nav class="social-links fade-up" id="quick-links" aria-label="Contact links"></nav>
   </main>
 
-  <div class="divider" aria-hidden="true"></div>
-
   <footer class="bottom">
     <div class="qr-block" id="qr-block">
       <div class="qr-inner" id="qr-code"></div>
       <p class="qr-label" id="qr-scan-label">Scan to Save</p>
     </div>
-    <a class="btn-save" id="desktop-save" href="tolga-polat.vcf" download="tolga-polat.vcf">
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
-      <span id="save-label">Save Contact</span>
-    </a>
   </footer>
 
   <a class="mobile-save" id="mobile-save" href="tolga-polat.vcf" download="tolga-polat.vcf">

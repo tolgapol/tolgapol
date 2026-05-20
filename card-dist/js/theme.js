@@ -2,7 +2,12 @@ const KEY = 'tp-theme';
 
 export function detectTheme() {
   const saved = localStorage.getItem(KEY);
-  return saved === 'light' || saved === 'dark' ? saved : 'dark';
+  if (saved === 'light' || saved === 'dark') return saved;
+
+  const h = new Date().getHours();
+  const isNight = h < 7 || h >= 18;
+  const sysDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  return (isNight || sysDark) ? 'dark' : 'light';
 }
 
 export function applyTheme(theme) {
