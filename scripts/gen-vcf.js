@@ -51,7 +51,7 @@ const LANGS = {
     title: 'Head of Digital Marketing',
     role: 'Marketing leader',
     country: 'Turkiye',
-    note: "Head of Digital Marketing at incehesap.com - Turkiye's leading tech e-commerce marketplace. Drives growth through SEM, SEO, CRM automation, and influencer marketing.",
+    note: "Head of Digital Marketing at incehesap.com - Turkiye's leading tech e-commerce platform. Drives growth through SEM, SEO, CRM automation, and influencer marketing.",
   },
   tr: {
     file: 'tolga-polat-tr.vcf',

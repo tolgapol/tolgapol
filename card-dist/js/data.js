@@ -20,7 +20,7 @@ const T = {
   en: {
     title: 'Head of Digital Marketing',
     location: 'Istanbul, Türkiye',
-    summary: 'Head of Digital Marketing at incehesap.com - Turkiye\'s leading tech e-commerce marketplace. Drives growth through SEM, SEO, CRM automation, and influencer marketing.',
+    summary: 'Head of Digital Marketing at incehesap.com - Turkiye\'s leading tech e-commerce platform. Drives growth through SEM, SEO, CRM automation, and influencer marketing.',
     save: 'Add to Contacts',
     scan: 'Scan to Add',
     vcf: 'tolga-polat.vcf',
@@ -36,7 +36,7 @@ const T = {
   es: {
     title: 'Director de Marketing Digital',
     location: 'Estambul, Turquía',
-    summary: 'Director de Marketing Digital en incehesap.com - el mayor marketplace e-commerce tech de Turquía. Impulsa el crecimiento con SEM, SEO, CRM y marketing de influencers.',
+    summary: 'Director de Marketing Digital en incehesap.com - la mayor plataforma e-commerce tech de Turquía. Impulsa el crecimiento con SEM, SEO, CRM y marketing de influencers.',
     save: 'Añadir a contactos',
     scan: 'Escanear para agregar',
     vcf: 'tolga-polat-es.vcf',
@@ -44,7 +44,7 @@ const T = {
   de: {
     title: 'Leiter Digitales Marketing',
     location: 'Istanbul, Türkei',
-    summary: 'Leiter Digitales Marketing bei incehesap.com - dem führenden Tech-E-Commerce-Marktplatz der Türkei. Wachstum durch SEM, SEO, CRM-Automatisierung und Influencer-Marketing.',
+    summary: 'Leiter Digitales Marketing bei incehesap.com - der führenden Tech-E-Commerce-Plattform der Türkei. Wachstum durch SEM, SEO, CRM-Automatisierung und Influencer-Marketing.',
     save: 'Kontakt hinzufügen',
     scan: 'Scannen zum Hinzufügen',
     vcf: 'tolga-polat-de.vcf',
@@ -52,7 +52,7 @@ const T = {
   fr: {
     title: 'Directeur Marketing Digital',
     location: 'Istanbul, Turquie',
-    summary: 'Directeur Marketing Digital chez incehesap.com - le premier marketplace e-commerce tech de Turquie. Pilote la croissance via SEM, SEO, CRM et marketing d\'influence.',
+    summary: 'Directeur Marketing Digital chez incehesap.com - la première plateforme e-commerce tech de Turquie. Pilote la croissance via SEM, SEO, CRM et marketing d\'influence.',
     save: 'Ajouter aux contacts',
     scan: 'Scanner pour ajouter',
     vcf: 'tolga-polat-fr.vcf',
