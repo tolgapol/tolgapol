@@ -19,6 +19,17 @@ function ic(name) {
 const FADE_IDS = ['profile-title', 'profile-location', 'profile-summary',
                   'mobile-save-label', 'qr-scan-label', 'quick-links'];
 
+const ANIM_OPTS = { duration: 150, easing: 'ease', fill: 'forwards' };
+
+function langFade(nodes, cb) {
+  const outs = nodes.map(n => n.animate([{ opacity: 1 }, { opacity: 0 }], ANIM_OPTS));
+  Promise.all(outs.map(a => a.finished)).then(() => {
+    cb();
+    const ins = nodes.map(n => n.animate([{ opacity: 0 }, { opacity: 1 }], ANIM_OPTS));
+    Promise.all(ins.map(a => a.finished)).then(() => ins.forEach(a => a.cancel()));
+  });
+}
+
 export function setupControls(lang, theme) {
   const sel = document.getElementById('lang-select');
   if (sel) {
@@ -27,11 +38,7 @@ export function setupControls(lang, theme) {
       const next = sel.value;
       saveLang(next);
       const nodes = FADE_IDS.map(id => document.getElementById(id)).filter(Boolean);
-      nodes.forEach(n => { n.style.opacity = '0'; });
-      setTimeout(() => {
-        updateContent(next);
-        nodes.forEach(n => { n.style.opacity = ''; });
-      }, 160);
+      langFade(nodes, () => updateContent(next));
     });
   }
 
