@@ -38,12 +38,11 @@ export function setupControls(lang, theme) {
 
 export function renderLinks() {
   const { personalUrl, linkedin, emailWork, instagram } = PROFILE;
-  // 2×2 grid: [LinkedIn][Email] / [tolgapol.com][Instagram]
   const items = [
-    { label: 'LinkedIn',     href: `https://linkedin.com/in/${linkedin}`,  icon: 'linkedin',  external: true },
-    { label: 'Email',        href: `mailto:${emailWork}`,                   icon: 'email',     external: false },
-    { label: 'tolgapol.com', href: personalUrl,                             icon: 'globe',     external: false },
-    { label: 'Instagram',    href: `https://instagram.com/${instagram}`,    icon: 'instagram', external: true },
+    { label: 'LinkedIn',     href: `https://linkedin.com/in/${linkedin}`, icon: 'linkedin',  external: true },
+    { label: 'Email',        href: `mailto:${emailWork}`,                  icon: 'email',     external: false },
+    { label: 'tolgapol.com', href: personalUrl,                            icon: 'globe',     external: false },
+    { label: 'Instagram',    href: `https://instagram.com/${instagram}`,   icon: 'instagram', external: true },
   ];
   const nav = document.getElementById('quick-links');
   if (!nav) return;

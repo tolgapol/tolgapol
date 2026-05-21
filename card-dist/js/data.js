@@ -1,14 +1,5 @@
 export const LANGUAGES = ['en', 'tr', 'es', 'de', 'fr', 'zh-TW', 'zh-CN'];
 
-export const LANG_LABELS = {
-  en: 'EN', tr: 'TR', es: 'ES', de: 'DE', fr: 'FR', 'zh-TW': '繁', 'zh-CN': '简',
-};
-
-export const LANG_NAMES = {
-  en: 'English', tr: 'Türkçe', es: 'Español', de: 'Deutsch',
-  fr: 'Français', 'zh-TW': '繁體中文', 'zh-CN': '简体中文',
-};
-
 export const BASE_URL = 'https://hi.tolgapol.com/';
 
 export const PROFILE = {
