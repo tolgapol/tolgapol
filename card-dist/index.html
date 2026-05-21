@@ -11,11 +11,14 @@
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://hi.tolgapol.com/">
   <meta property="og:image" content="https://hi.tolgapol.com/assets/tolga-polat.jpg">
-  <meta name="theme-color" content="#09090b">
+  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/jpeg" href="assets/tolga-polat.jpg">
+  <link rel="apple-touch-icon" href="assets/tolga-polat.jpg">
   <title>Tolga Polat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script>
     (function(){
@@ -29,7 +32,8 @@
         t=(night||dark)?'dark':'light';
       }
       document.documentElement.dataset.theme=t;
-      document.querySelector('meta[name="theme-color"]').content=t==='light'?'#fafafa':'#09090b';
+      var c=t==='light'?'#fafafa':'#09090b';
+      document.querySelectorAll('meta[name="theme-color"]').forEach(function(m){m.content=c;});
     })();
   </script>
 </head>
@@ -74,7 +78,7 @@
       <div class="company-logo fade-up" aria-label="incehesap.com">
         <img src="assets/incehesap-logo.svg" alt="incehesap.com" width="148" height="26">
       </div>
-      <p class="location fade-up">Istanbul, Türkiye</p>
+      <p class="location fade-up" id="profile-location">Istanbul, Türkiye</p>
       <p class="bio fade-up" id="profile-summary"></p>
       <nav class="social-links fade-up" id="quick-links" aria-label="Contact links"></nav>
     </div>

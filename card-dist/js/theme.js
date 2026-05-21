@@ -12,8 +12,8 @@ export function detectTheme() {
 
 export function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
-  const meta = document.querySelector('meta[name="theme-color"]');
-  if (meta) meta.content = theme === 'light' ? '#fafafa' : '#09090b';
+  const color = theme === 'light' ? '#fafafa' : '#09090b';
+  document.querySelectorAll('meta[name="theme-color"]').forEach(m => { m.content = color; });
 }
 
 export function toggleTheme() {
