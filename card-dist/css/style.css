@@ -193,8 +193,8 @@ h1 {
   padding: 14px 0 max(20px, env(safe-area-inset-bottom));
 }
 .qr-inner {
-  width: 150px; height: 150px; padding: 10px;
-  border: 1px solid var(--border); border-radius: 12px;
+  width: 263px; height: 263px; padding: 18px;
+  border: 1px solid var(--border); border-radius: 16px;
   background: #fff; display: grid; place-items: center;
 }
 .qr-inner svg { width: 100%; height: 100%; display: block; }
@@ -218,6 +218,17 @@ h1 {
 .mobile-save:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .mobile-save .icon { width: 15px; height: 15px; }
 
+/* ── Mobile quick-links fixed above save btn ─────── */
+@media (max-width: 639px) {
+  .social-links {
+    position: fixed;
+    inset-inline: 16px;
+    width: auto;
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 62px);
+    z-index: 30;
+  }
+}
+
 /* ── Animations ─────────────────────────────────── */
 .fade-up { opacity: 0; animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards; }
 .card-body > *:nth-child(1) { animation-delay: 0.05s; }
@@ -236,7 +247,7 @@ h1 {
   .avatar { width: 112px; height: 112px; }
 }
 @media (max-width: 639px) {
-  .card-body { padding-bottom: 80px; }
+  .card-body { padding-bottom: calc(max(16px, env(safe-area-inset-bottom)) + 134px); }
   .mobile-save { display: flex; }
 }
 @media (max-height: 640px) and (max-width: 639px) {
@@ -250,10 +261,10 @@ h1 {
 @media (max-height: 800px) and (min-width: 640px) {
   .card-body { gap: 10px; }
   .avatar { width: 88px; height: 88px; }
-  .qr-inner { width: 130px; height: 130px; }
+  .qr-inner { width: 228px; height: 228px; padding: 15px; }
 }
 @media (max-height: 700px) and (min-width: 640px) {
   .card-body { gap: 8px; }
   .avatar { width: 72px; height: 72px; }
-  .qr-inner { width: 110px; height: 110px; }
+  .qr-inner { width: 193px; height: 193px; padding: 13px; }
 }

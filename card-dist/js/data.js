@@ -20,7 +20,7 @@ const T = {
   en: {
     title: 'Head of Digital Marketing',
     location: 'Istanbul, Türkiye',
-    summary: 'Head of Digital Marketing at incehesap.com - Turkiye\'s leading tech e-commerce platform. Drives growth through SEM, SEO, CRM automation, and influencer marketing.',
+    summary: 'Performance-driven marketing leader scaling Turkey\'s largest tech e-commerce platform through paid search, SEO strategy, lifecycle CRM automation, and data-backed influencer partnerships.',
     save: 'Add to Contacts',
     scan: 'Scan to Add',
     vcf: 'tolga-polat.vcf',
@@ -28,7 +28,7 @@ const T = {
   tr: {
     title: 'Dijital Pazarlama Müdürü',
     location: 'İstanbul, Türkiye',
-    summary: 'incehesap.com\'da Dijital Pazarlama Müdürü - Türkiye\'nin en büyük teknoloji e-ticaret platformu. SEM, SEO, CRM otomasyonu ve influencer pazarlama ile büyümeyi yönlendiriyor.',
+    summary: 'Türkiye\'nin en büyük teknoloji e-ticaret platformunu ücretli arama, SEO stratejisi, yaşam döngüsü CRM otomasyonu ve veri odaklı influencer iş birlikleriyle büyüten performans odaklı pazarlama lideri.',
     save: 'Rehbere Ekle',
     scan: 'Tara ve Ekle',
     vcf: 'tolga-polat-tr.vcf',
@@ -36,7 +36,7 @@ const T = {
   es: {
     title: 'Director de Marketing Digital',
     location: 'Estambul, Turquía',
-    summary: 'Director de Marketing Digital en incehesap.com - la mayor plataforma e-commerce tech de Turquía. Impulsa el crecimiento con SEM, SEO, CRM y marketing de influencers.',
+    summary: 'Líder de marketing orientado al rendimiento que escala la mayor plataforma e-commerce tech de Turquía mediante búsqueda pagada, SEO, automatización CRM y alianzas con influencers basadas en datos.',
     save: 'Añadir a contactos',
     scan: 'Escanear para agregar',
     vcf: 'tolga-polat-es.vcf',
@@ -44,7 +44,7 @@ const T = {
   de: {
     title: 'Leiter Digitales Marketing',
     location: 'Istanbul, Türkei',
-    summary: 'Leiter Digitales Marketing bei incehesap.com - der führenden Tech-E-Commerce-Plattform der Türkei. Wachstum durch SEM, SEO, CRM-Automatisierung und Influencer-Marketing.',
+    summary: 'Performance-orientierter Marketing-Leiter, der die größte Tech-E-Commerce-Plattform der Türkei durch bezahlte Suche, SEO-Strategie, CRM-Automatisierung und datengestützte Influencer-Kampagnen skaliert.',
     save: 'Kontakt hinzufügen',
     scan: 'Scannen zum Hinzufügen',
     vcf: 'tolga-polat-de.vcf',
@@ -52,7 +52,7 @@ const T = {
   fr: {
     title: 'Directeur Marketing Digital',
     location: 'Istanbul, Turquie',
-    summary: 'Directeur Marketing Digital chez incehesap.com - la première plateforme e-commerce tech de Turquie. Pilote la croissance via SEM, SEO, CRM et marketing d\'influence.',
+    summary: 'Responsable marketing axé performance, développant la première plateforme e-commerce tech de Turquie via le search payant, le SEO, l\'automatisation CRM et des partenariats influenceurs fondés sur les données.',
     save: 'Ajouter aux contacts',
     scan: 'Scanner pour ajouter',
     vcf: 'tolga-polat-fr.vcf',
@@ -60,7 +60,7 @@ const T = {
   'zh-TW': {
     title: '數位行銷總監',
     location: '伊斯坦堡，土耳其',
-    summary: 'incehesap.com 數位行銷總監 - 土耳其領先的科技電商平台，負責 SEM、SEO、CRM 自動化與網紅行銷。',
+    summary: '以數據驅動的行銷領導者，透過搜尋引擎行銷（SEM）、搜尋引擎優化（SEO）、客戶關係管理（CRM）自動化與網紅合作，推動土耳其最大科技電商平台持續成長。',
     save: '加入聯絡人',
     scan: '掃描以加入',
     vcf: 'tolga-polat-zh-TW.vcf',
@@ -68,7 +68,7 @@ const T = {
   'zh-CN': {
     title: '数字营销总监',
     location: '伊斯坦布尔，土耳其',
-    summary: 'incehesap.com 数字营销总监 - 土耳其领先的科技电商平台，负责 SEM、SEO、CRM 自动化与网红营销。',
+    summary: '以数据驱动的营销领导者，通过搜索引擎营销（SEM）、搜索引擎优化（SEO）、客户关系管理（CRM）自动化与网红营销，推动土耳其最大科技电商平台持续增长。',
     save: '添加到联系人',
     scan: '扫描以添加',
     vcf: 'tolga-polat-zh-CN.vcf',
