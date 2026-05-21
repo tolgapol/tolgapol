@@ -238,8 +238,16 @@ h1 {
 .card-body > *:nth-child(5) { animation-delay: 0.34s; }
 .card-body > *:nth-child(6) { animation-delay: 0.41s; }
 .card-body > *:nth-child(7) { animation-delay: 0.48s; }
+.qr-block  { animation-delay: 0.55s; }
+.mobile-save { animation-delay: 0.48s; }
 @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 @media (prefers-reduced-motion: reduce) { *,*::before,*::after { animation-duration:1ms !important; transition-duration:1ms !important; } }
+
+/* ── Language-switch fade transition ────────────── */
+#profile-title, #profile-location, #profile-summary,
+#mobile-save-label, #qr-scan-label, #quick-links {
+  transition: opacity 0.15s ease;
+}
 
 /* ── Responsive ─────────────────────────────────── */
 @media (min-width: 640px) {

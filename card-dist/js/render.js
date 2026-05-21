@@ -16,11 +16,23 @@ function ic(name) {
   return `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${SVG[name]}</svg>`;
 }
 
+const FADE_IDS = ['profile-title', 'profile-location', 'profile-summary',
+                  'mobile-save-label', 'qr-scan-label', 'quick-links'];
+
 export function setupControls(lang, theme) {
   const sel = document.getElementById('lang-select');
   if (sel) {
     sel.value = lang;
-    sel.addEventListener('change', () => { saveLang(sel.value); updateContent(sel.value); });
+    sel.addEventListener('change', () => {
+      const next = sel.value;
+      saveLang(next);
+      const nodes = FADE_IDS.map(id => document.getElementById(id)).filter(Boolean);
+      nodes.forEach(n => { n.style.opacity = '0'; });
+      setTimeout(() => {
+        updateContent(next);
+        nodes.forEach(n => { n.style.opacity = ''; });
+      }, 160);
+    });
   }
 
   const btn = document.getElementById('theme-toggle');
@@ -36,11 +48,12 @@ export function setupControls(lang, theme) {
   }
 }
 
-export function renderLinks() {
+function renderLinks(lang) {
+  const tr = t(lang);
   const { linkedin, emailWork } = PROFILE;
   const items = [
-    { label: 'LinkedIn', href: `https://linkedin.com/in/${linkedin}`, icon: 'linkedin', external: true },
-    { label: 'Email',    href: `mailto:${emailWork}`,                  icon: 'email',    external: false },
+    { label: tr.linkedin, href: `https://linkedin.com/in/${linkedin}`, icon: 'linkedin', external: true },
+    { label: tr.email,    href: `mailto:${emailWork}`,                  icon: 'email',    external: false },
   ];
   const nav = document.getElementById('quick-links');
   if (!nav) return;
@@ -57,11 +70,13 @@ export function updateContent(lang) {
   const el = (id) => document.getElementById(id);
   const set = (id, val) => { const e = el(id); if (e) e.textContent = val; };
 
-  set('profile-title',    tr.title);
-  set('profile-location', tr.location);
-  set('profile-summary',  tr.summary);
+  set('profile-title',     tr.title);
+  set('profile-location',  tr.location);
+  set('profile-summary',   tr.summary);
   set('mobile-save-label', tr.save);
   set('qr-scan-label',     tr.scan);
+
+  renderLinks(lang);
 
   const mSave = el('mobile-save');
   if (mSave) { mSave.href = vcfUrl; mSave.download = tr.vcf; }
