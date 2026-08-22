@@ -10,6 +10,6 @@
     "deploy:card": "wrangler pages deploy card-dist --project-name=tolgapol-hi"
   },
   "devDependencies": {
-    "wrangler": "^4.0.0"
+    "wrangler": "^4.125.0"
   }
 }
