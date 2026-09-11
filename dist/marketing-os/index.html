@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketing OS</title>
+  <meta name="description" content="Marketing OS is a personal marketing-automation and API-integration toolkit built and operated by Tolga Polat.">
+  <meta property="og:title" content="Marketing OS">
+  <meta property="og:description" content="A personal marketing-automation and API-integration toolkit built and operated by Tolga Polat.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tolgapol.com/marketing-os">
+  <link rel="canonical" href="https://tolgapol.com/marketing-os">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root {
+      --bg: #09090b;
+      --text: #fafafa;
+      --text-mid: #a1a1aa;
+      --text-dim: #71717a;
+      --border: rgba(255,255,255,0.08);
+      --bg-card: rgba(255,255,255,0.025);
+    }
+    html { -webkit-font-smoothing: antialiased; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    .wrapper { max-width: 720px; margin: 0 auto; padding: 4.5rem 1.5rem 6rem; }
+    a { color: var(--text); }
+    a.back { color: var(--text-dim); text-decoration: none; font-size: 0.9rem; display: inline-block; margin-bottom: 2.5rem; }
+    a.back:hover { color: var(--text-mid); }
+    .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 1rem; }
+    h1 { font-size: clamp(2.2rem, 5vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .lede { font-size: 1.1rem; color: var(--text-mid); max-width: 560px; margin-bottom: 3rem; }
+    .lede strong { color: var(--text); font-weight: 500; }
+    h2 { font-size: 1.1rem; font-weight: 600; margin-top: 2.75rem; margin-bottom: 1rem; }
+    p, li { color: var(--text-mid); font-size: 1rem; margin-bottom: 0.9rem; max-width: 620px; }
+    ul { padding-left: 1.25rem; margin-bottom: 0.9rem; }
+    strong { color: var(--text); font-weight: 500; }
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem 1.5rem; margin-top: 1rem; }
+    .links { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .links a { color: var(--text-mid); font-size: 0.9rem; text-decoration: none; }
+    .links a:hover { color: var(--text); }
+    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <a class="back" href="/">&larr; tolgapol.com</a>
+
+    <div class="eyebrow">About this app</div>
+    <h1>Marketing OS</h1>
+    <p class="lede">
+      Marketing OS is a personal marketing-automation and API-integration toolkit
+      that I, <strong>Tolga Polat</strong>, build and operate for my own use &mdash;
+      it is not a public product, and it is not offered as a service to third parties.
+    </p>
+
+    <h2>What it does</h2>
+    <p>
+      Marketing OS connects to advertising and analytics platform APIs
+      (for example Google Ads, Google Analytics, and Google Search Console)
+      using credentials I control, to manage accounts that I own or am
+      directly authorized to administer. It is used to:
+    </p>
+    <ul>
+      <li>read performance and configuration data from those accounts</li>
+      <li>generate reports and recommendations</li>
+      <li>make changes to campaigns or content when I direct it to</li>
+    </ul>
+
+    <h2>Who operates it</h2>
+    <div class="card">
+      <p style="margin-bottom:0">
+        Marketing OS is operated by a single person &mdash; me. There is no
+        public signup, no multi-tenant hosting, and no third-party access.
+        Data retrieved through it stays within my own infrastructure and is
+        never sold or shared outside the account it came from.
+      </p>
+    </div>
+
+    <h2>Data &amp; contact</h2>
+    <p>
+      Full details are in the <a href="/privacy">privacy policy</a> and
+      <a href="/terms">terms of service</a>. Questions:
+      <a href="mailto:tlqplt@gmail.com">tlqplt@gmail.com</a>.
+    </p>
+
+    <div class="links">
+      <a href="/">tolgapol.com</a>
+      <a href="/privacy">Privacy Policy</a>
+      <a href="/terms">Terms of Service</a>
+    </div>
+
+    <footer>Tolga Polat</footer>
+  </div>
+</body>
+</html>
