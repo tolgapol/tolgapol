@@ -6,8 +6,13 @@
   "scripts": {
     "dev": "wrangler pages dev dist",
     "dev:card": "wrangler pages dev card-dist",
-    "deploy": "wrangler pages deploy dist --project-name=tolgapol",
-    "deploy:card": "wrangler pages deploy card-dist --project-name=tolgapol-hi"
+    "sitemap": "node scripts/sitemap.mjs",
+    "predeploy": "npm run sitemap",
+    "deploy": "wrangler pages deploy dist --project-name=tolgapol --branch=main && node scripts/indexnow-submit.mjs",
+    "deploy:card": "wrangler pages deploy card-dist --project-name=tolgapol-hi",
+    "indexnow": "node scripts/indexnow-submit.mjs",
+    "indexnow:dry": "node scripts/indexnow-submit.mjs --dry-run",
+    "test": "node --test \"scripts/**/*.test.mjs\""
   },
   "devDependencies": {
     "wrangler": "^4.125.0"
