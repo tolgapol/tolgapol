@@ -7,14 +7,16 @@ separate NFC card at hi.tolgapol.com. No build step, no framework.
 
 - `npm test` - node:test suite for the deploy scripts (`scripts/**/*.test.mjs`)
 - `npm run dev` - serve `dist/` locally with wrangler
-- `npm run deploy` - production deploy of tolgapol.com (see below)
+- `cfw --exec npm run deploy` - production deploy of tolgapol.com (see below)
 - `npm run indexnow:dry` - print the URLs the next deploy would send to IndexNow
-- `npm run deploy:card` - deploy `card-dist/` to the `tolgapol-hi` Pages project
+- `cfw --exec npm run deploy:card` - deploy `card-dist/` to the `tolgapol-hi` Pages project
 
 ## Deploy
 
+Cloudflare: account tlqplt; run wrangler as `cfw <args>` (token from 1Password via .env.op, never `wrangler login` or tokens in .env); `account_id` is pinned in the wrangler config.
+
 The Cloudflare Pages projects `tolgapol` and `tolgapol-hi` have **no Git integration**:
-pushing to GitHub deploys nothing. `npm run deploy` is the only production path:
+pushing to GitHub deploys nothing. `cfw --exec npm run deploy` is the only production path:
 
 1. `predeploy` regenerates `dist/sitemap.xml` from `dist/**/index.html` (noindex pages excluded).
 2. `wrangler pages deploy dist --branch=main` publishes to production.
