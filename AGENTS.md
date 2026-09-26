@@ -13,7 +13,7 @@ separate NFC card at hi.tolgapol.com. No build step, no framework.
 
 ## Deploy
 
-Cloudflare: account tlqplt; run wrangler as `cfw <args>` (token from 1Password via .env.op, never `wrangler login` or tokens in .env); `account_id` is pinned in the wrangler config.
+Cloudflare: account tlqplt; run wrangler as `cfw <args>` (token from 1Password via .env.op, never `wrangler login` or tokens in .env); the account is pinned by `CLOUDFLARE_ACCOUNT_ID` from .env.op (Pages config files reject `account_id`).
 
 The Cloudflare Pages projects `tolgapol` and `tolgapol-hi` have **no Git integration**:
 pushing to GitHub deploys nothing. `cfw --exec npm run deploy` is the only production path:
