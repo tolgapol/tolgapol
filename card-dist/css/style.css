@@ -5,7 +5,7 @@
   --bg-card: rgba(255,255,255,0.03);
   --text: #fafafa;
   --text-mid: #a1a1aa;
-  --text-dim: #52525b;
+  --text-dim: #8a8a94;
   --accent: #e4e4e7;
   --border: rgba(255,255,255,0.08);
   --border-s: rgba(255,255,255,0.15);
@@ -23,7 +23,7 @@ html[data-theme="light"] {
   --bg-card: rgba(0,0,0,0.025);
   --text: #09090b;
   --text-mid: #52525b;
-  --text-dim: #a1a1aa;
+  --text-dim: #6b6b75;
   --accent: #18181b;
   --border: rgba(0,0,0,0.08);
   --border-s: rgba(0,0,0,0.18);
@@ -89,6 +89,7 @@ body {
   touch-action: manipulation;
 }
 .lang-wrap select:hover, .lang-wrap select:focus { border-color: var(--border-s); color: var(--text); }
+.lang-wrap select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .lang-wrap::after {
   content: ""; position: absolute; right: 9px; top: 50%; transform: translateY(-50%);
   width: 0; height: 0;
